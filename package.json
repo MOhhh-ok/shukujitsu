@@ -1,6 +1,6 @@
 {
     "name": "@masa-dev/shukujitsu",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "API Key不要でGoogle Calendarから日本の祝日を取得するライブラリ",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
