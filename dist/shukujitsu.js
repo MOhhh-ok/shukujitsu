@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.fetchShukujitsu = fetchShukujitsu;
+exports.default = fetchShukujitsu;
 var CALENDAR_ID = encodeURIComponent('japanese__ja@holiday.calendar.google.com');
 var URL = "https://calendar.google.com/calendar/ical/".concat(CALENDAR_ID, "/public/full.ics");
 function fetchShukujitsu() {
@@ -58,11 +58,10 @@ function parse(text) {
     ensureFirstLine(lines.shift());
     var items = linesToItems(lines);
     items.forEach(function (item) {
-        var _a, _b, _c;
+        var _a, _b;
         result.push({
             title: (_a = item.SUMMARY) !== null && _a !== void 0 ? _a : '',
-            start: formatDate((_b = item.DTSTART) !== null && _b !== void 0 ? _b : ''),
-            end: formatDate((_c = item.DTEND) !== null && _c !== void 0 ? _c : ''),
+            date: formatDate((_b = item.DTSTART) !== null && _b !== void 0 ? _b : ''),
         });
     });
     return result;

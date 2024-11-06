@@ -1,5 +1,5 @@
 type LineItem = Partial<Record<string, string>>;
-type ResultItem = { title: string; start: string; end: string };
+type ResultItem = { title: string; date: string };
 
 const CALENDAR_ID = encodeURIComponent(
     'japanese__ja@holiday.calendar.google.com'
@@ -21,8 +21,7 @@ function parse(text: string) {
     items.forEach((item) => {
         result.push({
             title: item.SUMMARY ?? '',
-            start: formatDate(item.DTSTART ?? ''),
-            end: formatDate(item.DTEND ?? ''),
+            date: formatDate(item.DTSTART ?? ''),
         });
     });
     return result;
