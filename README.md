@@ -2,6 +2,8 @@
 
 日本の祝日をGoogle Calendarから取得します。
 
+CORS制限のため、ブラウザでは使用できません。
+
 ## Install
 
 ```
